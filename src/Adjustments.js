@@ -21,7 +21,7 @@ const Wrapper = styled.div`
 
 `;
 
-const ColHeading = styled(Text)`
+const ColHeading = styled.div`
   font-size: 12px;
   font-style: italic;
   -ms-flex-item-align: end;
@@ -43,17 +43,15 @@ class Adjustments extends React.Component {
 
   addField = () => {
     const { fields } = this.props;
+    //eve.preventDefault();
     fields.push({});
   };
 
   render = () => {
     const { fields } = this.props;
-
-    debugger
-
     return (
       <Fragment>
-        <Button type="button" onClick={() => this.addField()} label="Add an adjustment" />
+        <button  onClick={()=>this.addField()} value="Add an adjustment">Click here</button>
         <Wrapper>
           <ColHeading textAlign="right" gridCol={1}>
           </ColHeading>

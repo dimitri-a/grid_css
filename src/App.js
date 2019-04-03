@@ -1,18 +1,13 @@
 import React, { Component } from 'react';
 import './App.css';
-import {FieldArray} from 'redux-form'
-import Adjustments from './Adjustments';
+
+import FormComponent from './FormComponent';
 
 class App extends Component {
   render() {
     return (
       <div className="App">
-       {/* <AdjustmentRowsTable items={[]}></AdjustmentRowsTable> */}
-
-
-      
-
-
+        <FormComponent></FormComponent>
       </div>
     );
   }
