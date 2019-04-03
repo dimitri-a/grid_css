@@ -1,15 +1,11 @@
 /*eslint-disable*/
 import React, { Fragment } from 'react';
-import { Field } from 'redux-form'
 import styled from 'styled-components'
 
 
-const AdjustmentRow = ({ adjustment, fields, index }) => {
+const AdjustmentRow = ({ adjustment,index }) => {
 
-    // const removeAdjustment = () => {
-    //     console.log('remmove adjustment')
-    //     fields.remove(index);
-    // };
+    debugger
 
 
     const ValueHeading = styled.div`
@@ -53,7 +49,7 @@ const AdjustmentRow = ({ adjustment, fields, index }) => {
         <Fragment>
 
             < Value textAlign="right" gridCol={1} gridRow={index + 3} weight={'regular'}>
-                <Field name={`${adjustment}.type`} component="select">
+                <select>
                     <option />
                     <option value="-">Non-recurring income </option>
                     <option value="+">Non-recurring expense</option>
@@ -62,25 +58,15 @@ const AdjustmentRow = ({ adjustment, fields, index }) => {
                     <option value="+">Discretionary Super</option>
                     <option value="-">Capex</option>
                     <option value="-">Working Capital Adjustments </option>
-                </Field>
+                </select>
             </Value>
 
             <Value textAlign="right" gridCol={2} gridRow={index + 3}>
-                <Field
-                    name={`${adjustment}.lastYear`}
-                    type="number"
-                  component='input'
-                    label="Prior year"
-                />
+                {adjustment.lastYear}
             </Value>
 
             <Value textAlign="right" gridCol={3} gridRow={index + 3}>
-                <Field
-                    name={`${adjustment}.currentYear`}
-                    type="number"
-                  component='input'
-                    label="Current Year"
-                />
+                {adjustment.currentYear}
             </Value>
 
             <Value textAlign="right" gridCol={4} gridRow={index + 3}>
@@ -88,9 +74,7 @@ const AdjustmentRow = ({ adjustment, fields, index }) => {
             </Value>
 
             <ValueComments textAlign="right" gridRow={index + 4} >
-                comments here testing
-        <textarea>Leave your comments here</textarea>
-
+                <textarea>Leave your comments here</textarea>
             </ValueComments>
 
 
